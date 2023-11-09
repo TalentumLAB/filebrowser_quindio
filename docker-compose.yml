@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  filebrowser:
+    image: filebrowser/filebrowser:s6
+    container_name: filebrowser-integratic
+    restart: always
+    environment:
+      - PUID=$(id -u)
+      - PGID=$(id -g)
+    ports:
+      - 8001:80
+    volumes:
+      - ./filebrowser.db:/database/filebrowser.db
+      - ./settings.json:/config/settings.json
+      - /apps/integratic:/srv
