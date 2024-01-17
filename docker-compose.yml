@@ -13,4 +13,4 @@ services:
     volumes:
       - ./filebrowser.db:/database/filebrowser.db
       - ./settings.json:/config/settings.json
-      - /apps/integratic:/srv
+      - /apps/integratic/public:/srv
